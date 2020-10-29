@@ -23,3 +23,6 @@ However, casting the vote creates an error. That is because we haven't specified
 ![result screenshot](./assets/result.png)
 
 * The worker service will be deplyed using the Docker build strategy as opposed to Source to Image (S2I) strategy that we've been using. Select the Apache HTTP Server from the catalog. Select advanced options and provide a name, git url and context, '_/worker_'. Leave the rest to default and add the app. Ignore the automated build. Select the build configuration of the service. Click on actions in the top-right. Select edit YAML. Change the _strategy_ from 'sourceStrategy' to 'dockerStrategy'. Delete the '_from_' section. Change '_type_' to Docker. Click on save. Start build. The build goes through and pushes a new Docker image. Once the image is deployed, you can access the logs to see the votes being processed. Now changing the vote has an immediate effect.
+
+### Todo
+* Get Node app to communicate with Redis
